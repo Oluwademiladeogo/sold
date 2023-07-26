@@ -10,6 +10,9 @@ router.get("/aboutus", (req, res)=>{
 router.get("/login", (req, res)=>{
     res.render("pages/login")
 })
+router.get("/signup", (req, res)=>{
+    res.render("pages/signup")
+})
 router.get("/cart", (req, res)=>{
     res.render("pages/cart")
 })
