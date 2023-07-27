@@ -24,9 +24,14 @@ var flash = require('connect-flash');
 // });
 
 
-const pages = require("./routes/pages")
 const adminpages = require("./routes/adminpages.js")
-app.use("/", pages)
+app.use("/", require("./routes/index"))
+app.use("/aboutus", require("./routes/aboutus"))
+app.use("/cart", require("./routes/cart"))
+app.use("/login", require("./routes/login"))
+app.use("/signup", require("./routes/signup"))
+
+
 app.use("/admin/pages", adminpages)
 
 //express session 
@@ -51,10 +56,12 @@ mongoose.connect(uri, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
-    .then(console.log("Connected to mongodb"))
+    .then(console.log("Connected to Mongodb"))
+    .then(winston.info("Connected to Mongodb"))
 
 //port connection
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log(`Connected, server listening on port ${port}`)
+    winston.info(`Connected, server listening on port ${port}`)
 })
