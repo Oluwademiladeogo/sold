@@ -5,7 +5,7 @@ const winston = require("winston")
 const session = require("express-session")
 const joi = require("joi")
 var path = require('path')
-// const cookieParser = require("cookie-parser")
+const cookieParser = require("cookie-parser")
 //using static folder
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -15,13 +15,17 @@ app.set("view engine", "ejs")
 
 //connect flash
 var flash = require('connect-flash');
+app.use(flash());
+// express session 
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: true,  maxAge: 60000 }
+}))
+app.use(cookieParser('keyboard cat'));
 
- 
-// app.set(()=>{
-// //   app.use(cookieParser('keyboard cat'));
-//   app.use(express-session({ cookie: { maxAge: 60000 }}));
-//   app.use(flash());
-// });
 
 
 const adminpages = require("./routes/adminpages.js")
@@ -34,17 +38,8 @@ app.use("/signup", require("./routes/signup"))
 
 app.use("/admin/pages", adminpages)
 
-//express session 
-// app.set('trust proxy', 1) // trust first proxy
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: false,
-//   saveUninitialized: false,
-//   cookie: { secure: true }
-// }))
 
-const log = require("./logging.js")
-log()
+require("./logging.js")()
 
 
 
