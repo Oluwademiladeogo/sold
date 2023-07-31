@@ -71,6 +71,9 @@ body {
         <div class="column"><a href="/signup" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign Up</a><br></div>
         <div class="column"><a href="/" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home</a></div>
       </div>
+      <% if (message.length>0) {%>
+        <div class="alert alert-primary" role="alert"><%= message %></div>
+        <% } %>
     <p class="mt-5 mb-3 text-muted">&copy; Bickersteth 2023</p>
   </form>
 </main>

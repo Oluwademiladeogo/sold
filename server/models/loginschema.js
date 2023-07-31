@@ -19,6 +19,10 @@ const loginschema = mongoose.model("login", new mongoose.Schema({
         maxlength: 1024,
         required : true 
 
+    },
+    salt: {
+        type: String,
+        required: true
     }
 }))
 const schema = joi.object({
