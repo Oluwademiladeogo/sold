@@ -32,9 +32,10 @@ const adminpages = require("./routes/adminpages.js")
 app.use("/", require("./routes/index"))
 app.use("/aboutus", require("./routes/aboutus"))
 app.use("/cart", require("./routes/cart"))
+app.use("/dashboard", require("./routes/dashboard"))
 app.use("/login", require("./routes/login"))
 app.use("/signup", require("./routes/signup"))
-
+app.use("/logout", require("./routes/logout"))
 
 app.use("/admin/pages", adminpages)
 
