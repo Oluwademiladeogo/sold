@@ -16,6 +16,7 @@ router.post("/", async(req, res)=>{
         res.render("pages/login", {message: req.flash("message")}) 
         
         }
+        if(!req.session.userID){
         const passwordentered = req.body.password
         const storedpassword = await loginschema.findOne({email: req.body.email})
         const passkey = await bcrypt.hash(passwordentered, storedpassword.salt)
@@ -23,6 +24,7 @@ router.post("/", async(req, res)=>{
         bcrypt.compare(passwordentered, passkey, (err, result)=>{
              if(result){
                 req.session.userID = user._id
+                console.log(req.session.userID)
                  res.redirect('/')
              }
      else{
@@ -30,7 +32,7 @@ router.post("/", async(req, res)=>{
         res.render("pages/login", {message: req.flash("message")}) 
      }
         })
-    
+        }
     }
         
     

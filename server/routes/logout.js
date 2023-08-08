@@ -5,7 +5,8 @@ router.get('/', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.clearCookie('connect.sid', { expires: new Date(0) });
+        res.clearCookie('newname');
+        console.log('After', req.session);
         res.redirect('/');
       }
     });
