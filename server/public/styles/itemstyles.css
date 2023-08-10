@@ -4,6 +4,8 @@
 }
 
 img{
+    margin-left: 5px;
+    margin-top: 15px;
 height: 450px !important;
 object-fit: contain !important;
 } 

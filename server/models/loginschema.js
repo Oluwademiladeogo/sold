@@ -13,6 +13,12 @@ const loginschema = mongoose.model("login", new mongoose.Schema({
         maxlength: 255,
         required : true
     },
+    phone: {
+        type: String,
+        minlength: 5,
+        maxlength: 20,
+        required: true
+    },
     password: { 
         type : String,
         minlength: 5,

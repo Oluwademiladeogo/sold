@@ -23,7 +23,11 @@ router.post("/", async(req, res)=>{
         console.log(passkey)
         bcrypt.compare(passwordentered, passkey, (err, result)=>{
              if(result){
+                
                 req.session.userID = user._id
+                req.session.name = user.name
+                req.session.email = user.email
+                req.session.phone = user.phone
                 console.log(req.session.userID)
                  res.redirect('/')
              }
