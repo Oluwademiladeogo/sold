@@ -73,7 +73,14 @@ body {
       </div>
       <% if (message.length>0) {%>
         <div class="alert alert-primary" role="alert"><%= message %></div>
+        <% if (redirect) {%>
+        <script>
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 2000);
+        </script>
         <% } %>
+      <% } %>
     <p class="mt-5 mb-3 text-muted">&copy; Bickersteth 2023</p>
   </form>
 </main>

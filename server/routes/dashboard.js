@@ -1,17 +1,28 @@
 const express = require("express")
 const router = express.Router()
-const { loginschema, schema } = require("../models/loginschema")
-router.get("/", (req, res)=>{
-    const name = req.session.name
-    const email = req.session.email
-    const user = loginschema.findOne({email: email})
+const jwt = require("jsonwebtoken")
+require("dotenv").config();
+router.get("/", async(req, res)=>{
+    try{
+    const token = req.cookies.authToken
+    let details = jwt.verify(token, process.env.JWTKEY)
     res.render("pages/dashboard", {
-        session: req.session,   
-        name: req.session.name,
-        email: req.body.email,
-        phone: req.body.number
+        cookies: req.cookies,   
+        name: details.name,
+        email: details.email,
+        phone: details.phone
     })
-    console.log(name + user)
+}
+catch (err){
+    console.log(err.message)
+    let message = "You need to login to view this page"
+    res.status(401).render("pages/error", {
+        message: message,
+        cookies: req.cookies,
+        errcode: 401,
+        link: "/login"
+        })
+}
 })
 
 module.exports = router;

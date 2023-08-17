@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
-const {loginschema, schema} = require("../models/loginschema")
+const {loginschema} = require("../models/loginschema")
 router.get("/", (req, res)=>{
     let message = '';
     res.render("pages/signup", {message})

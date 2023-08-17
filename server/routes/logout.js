@@ -5,9 +5,11 @@ router.get('/', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.clearCookie('newname');
+        res.clearCookie();
+        
         console.log('After', req.session);
         res.redirect('/');
+
       }
     });
   });
