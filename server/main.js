@@ -59,6 +59,7 @@ app.use("/signup", require("./routes/signup"))
 app.use("/logout", require("./routes/logout"))
 app.use("/checkout", require("./routes/checkout"))
 app.use("/admin/pages", require("./routes/adminpages"))
+app.use("/editprofile", require("./routes/editprofile"))
 //if none of them works out, error occurs
 // app.use(error)
 require("./logging.js")()

@@ -73,6 +73,12 @@ body {
       </div>
       <% if (message.length>0) {%>
         <div class="alert alert-primary" role="alert"><%= message %></div>
+        <% if (!redirect) {%>
+          <script>
+            setTimeout(() => {
+            }, 2000);
+          </script>
+          <% } %>
         <% if (redirect) {%>
         <script>
           setTimeout(() => {

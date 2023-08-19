@@ -1,16 +1,28 @@
 const express = require("express")
 const router = express.Router()
+const jwt = require("jsonwebtoken")
 router.get('/', (req, res) => {
-    req.session.destroy((err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.clearCookie();
-        
-        console.log('After', req.session);
-        res.redirect('/');
+  try{
+    res.clearCookie('authToken');
+    console.log(req.cookies.authToken)
 
-      }
-    });
+    
+    req.flash('message', 'Logged out successfully'); 
+    res.render("pages/login", {
+      message: req.flash("message"), 
+      cookies: req.cookies,
+      redirect: true
+    
+    })}
+catch (err){
+    console.log(err.message)
+    let message = "Something broke"
+    res.status(500).render("pages/error", {
+        message: message,
+        cookies: req.cookies,
+        errcode: 500,
+        link: "/login"
+        })
+}
   });
   module.exports = router;

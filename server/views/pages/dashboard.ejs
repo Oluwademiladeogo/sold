@@ -4,8 +4,6 @@
     <%- include("../partials/header"); %>
     <title>Dashboard</title>
     <script src="https://kit.fontawesome.com/86988e59cc.js" crossorigin="anonymous"></script>        
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
@@ -135,7 +133,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <input type="" id="editProfileButton" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                     </div>
                 </div>
                 <div class="row">
@@ -180,5 +178,15 @@
                 </div>
             </form>           
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              const editProfileButton = document.getElementById("editProfileButton");
+              
+              editProfileButton.addEventListener("click", function() {
+                window.location.href = "/editprofile"
+              });
+            });
+            </script>
+
 </body>
 </html>

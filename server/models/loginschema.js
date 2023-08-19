@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const joi = require("joi")
 const loginschema = mongoose.model("login", new mongoose.Schema({
     name: {
         type: String,
@@ -31,11 +30,4 @@ const loginschema = mongoose.model("login", new mongoose.Schema({
         required: true
     }
 }))
-const schema = joi.object({
-    name: joi.string().min(5).max(25).required(),
-    email: joi.string().min(5).max(255).email().required(),
-    password: joi.string().min(5).max(255).required()
-})
-module.exports = {
-    loginschema, schema
-}
+module.exports = {loginschema}

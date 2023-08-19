@@ -20,7 +20,7 @@ catch (err){
         message: message,
         cookies: req.cookies,
         errcode: 401,
-        link: "/login"
+        link: "/logout"
         })
 }
 })

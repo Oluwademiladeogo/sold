@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-const joi = require("joi")
 const itemschema = mongoose.model("items", new mongoose.Schema({
     name: {
         type: String,
@@ -14,10 +13,4 @@ const itemschema = mongoose.model("items", new mongoose.Schema({
         maxlength: 10
     }
 }))
-const schema = joi.object({
-    name: joi.string().length(50).required(),
-    price: joi.string().length(10).required()
-})
-module.exports = {
-    itemschema, schema
-}
+module.exports = {itemschema}
