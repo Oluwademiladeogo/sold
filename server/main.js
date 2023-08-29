@@ -8,11 +8,11 @@ var path = require('path')
 const cookieParser = require("cookie-parser")
 
 
-app.use(express.static(path.join(__dirname, 'public'))); // Serve the "public" folder as a static directory
-//using static folder
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-//set view engine
+
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
 
@@ -63,9 +63,3 @@ app.use("/editprofile", require("./routes/editprofile"))
 //if none of them works out, error occurs
 // app.use(error)
 require("./logging.js")()
-
-
-
-
-
-
