@@ -1,5 +1,4 @@
 const express = require("express")
-const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
@@ -20,7 +19,8 @@ let user = await loginschema.findOne({email: req.body.email})
         if(!req.cookies.authToken){
         const passwordentered = req.body.password
         const passkey = user.password
-        bcrypt.compare(passwordentered, passkey, (result)=>{
+        // console.log(passwordentered, passkey)
+          bcrypt.compare(passwordentered, passkey, (err, result)=>{
              if(result){
                 let expires = Math.floor(Date.now()/1000) + 60 * 60 * 24 * 5 //5 days
                 let payload = {

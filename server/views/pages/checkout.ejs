@@ -557,19 +557,15 @@ a {
                                                 <div data-bs-toggle="collapse">
                                                     <label class="card-radio-label mb-0">
                                                         <input type="radio" name="address" id="info-address1" class="card-radio-input" checked="">
-                                                        <div class="card-radio text-truncate p-3">
+                                                        <div class="card-radio text-truncate p-4">
                                                             <span class="fs-14 mb-4 d-block">Address 1</span>
-                                                            <span class="fs-14 mb-2 d-block">Bradley McMillian</span>
-                                                            <span class="text-muted fw-normal text-wrap mb-1 d-block">109 Clarksburg Park Road Show Low, AZ 85901</span>
+                                                            <span class="fs-14 mb-4 d-block">Bickersteth <br> Oluwademilade</span>
+                                                            <span class="text-muted fw-normal text-wrap mb-1 d-block">Connect</span>
                                                            
-                                                            <span class="text-muted fw-normal d-block">Mo. 012-345-6789</span>
+                                                            <span class="text-muted fw-normal d-block"><a href="https://www.linkedin.com/in/oluwademiladebickersteth/">See My LinkedIn</a>  </span>
                                                         </div>
                                                     </label>
-                                                    <div class="edit-btn bg-light  rounded">
-                                                        <a href="#" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit">
-                                                            <i class="bx bx-pencil font-size-16"></i>
-                                                        </a>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
 
@@ -577,18 +573,18 @@ a {
                                                 <div>
                                                     <label class="card-radio-label mb-0">
                                                         <input type="radio" name="address" id="info-address2" class="card-radio-input">
-                                                        <div class="card-radio text-truncate p-3">
+                                                        <div class="card-radio text-truncate p-4">
                                                             <span class="fs-14 mb-4 d-block">Address 2</span>
-                                                            <span class="fs-14 mb-2 d-block">Bradley McMillian</span>
-                                                            <span class="text-muted fw-normal text-wrap mb-1 d-block">109 Clarksburg Park Road Show Low, AZ 85901</span>
-                                                            <span class="text-muted fw-normal d-block">Mo. 012-345-6789</span>
+                                                            <span class="fs-14 mb-4 d-block">Bickersteth <br> Oluwademilade</span>
+                                                            <span class="text-muted fw-normal text-wrap mb-1 d-block">Contact</span>
+                                                            <span class="text-muted fw-normal d-block"><a href="mailto:bickerstethdemilade@gmail.com">Send a Mail</a></span>
                                                         </div>
                                                     </label>
-                                                    <div class="edit-btn bg-light  rounded">
+                                                    <!-- <div class="edit-btn bg-light  rounded">
                                                         <a href="#" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit">
                                                             <i class="bx bx-pencil font-size-16"></i>
                                                         </a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -607,13 +603,14 @@ a {
                                     <h5 class="font-size-16 mb-1">Payment Info</h5>
                                     <p class="text-muted text-truncate mb-4">How would you like to pay</p>
                                 </div>
+                                <form method="post" action="/pay">
                                 <div>
                                     <h5 class="font-size-14 mb-3">Payment method :</h5>
                                     <div class="row">
                                         <div class="col-lg-3 col-sm-6">
                                             <div data-bs-toggle="collapse">
                                                 <label class="card-radio-label">
-                                                    <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
+                                                    <input type="radio" name="paymethod" value="paywithcard" id="paymethodoption1" class="card-radio-input">
                                                     <span class="card-radio py-3 text-center text-truncate">
                                                         <i class="bx bx-credit-card d-block h2 mb-3"></i>
                                                         Credit / Debit Card
@@ -622,22 +619,22 @@ a {
                                             </div>
                                         </div>
                                         
-                                        <div class="col-lg-3 col-sm-6">
+                                        <!-- <div class="col-lg-3 col-sm-6">
                                             <div>
                                                 <label class="card-radio-label">
-                                                    <input type="radio" name="pay-method" id="pay-methodoption2" class="card-radio-input">
+                                                    <input type="radio" name="paymethod" id="paymethodoption2" class="card-radio-input">
                                                     <span class="card-radio py-3 text-center text-truncate">
                                                         <i class="bx bxl-paypal d-block h2 mb-3"></i>
                                                         Paypal
                                                     </span>
                                                 </label>
                                             </div>
-                                        </div>
-
+                                        </div> -->
+                                        
                                         <div class="col-lg-3 col-sm-6">
                                             <div>
                                                 <label class="card-radio-label">
-                                                    <input type="radio" name="pay-method" id="pay-methodoption3" class="card-radio-input" checked="">
+                                                    <input type="radio" name="paymethod" value="paywithoutcard" id="paymethodoption3" class="card-radio-input" checked="">
 
                                                     <span class="card-radio py-3 text-center text-truncate">
                                                         <i class="bx bx-money d-block h2 mb-3"></i>
@@ -654,25 +651,26 @@ a {
                     </ol>
                 </div>
             </div>
-
+        
             <div class="row my-4">
                 <div class="col">
-                    <a href="ecommerce-products.html" class="btn btn-link text-muted">
+                    <a href="/" class="btn btn-link text-muted">
                         <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
                 </div> <!-- end col -->
                 <div class="col">
+                    
                     <div class="text-end mt-2 mt-sm-0">
-                        <a href="#" class="btn btn-success">
-                            <i class="mdi mdi-cart-outline me-1"></i> Procced </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="mdi mdi-cart-outline me-1"></i> Procced </button>
                     </div>
                 </div> <!-- end col -->
             </div> <!-- end row-->
-        </div>
+        </div></form>
         <div class="col-xl-4">
             <div class="card checkout-order-summary">
                 <div class="card-body">
                     <div class="p-3 bg-light mb-3">
-                        <h5 class="font-size-16 mb-0">Order Summary <span class="float-end ms-2">#MN0124</span></h5>
+                        <h5 class="font-size-16 mb-0">Order Summary <span class="float-end ms-2">Your Order</span></h5>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-centered mb-0 table-nowrap">
@@ -684,7 +682,7 @@ a {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <th scope="row"><img src="https://www.bootdey.com/image/280x280/FF00FF/000000" alt="product-img" title="product-img" class="avatar-lg rounded"></th>
                                     <td>
                                         <h5 class="font-size-16 text-truncate"><a href="#" class="text-dark">Waterproof Mobile Phone</a></h5>
@@ -745,14 +743,14 @@ a {
                                     <td>
                                         $ 18.20
                                     </td>
-                                </tr>                              
+                                </tr>                               -->
                                     
                                 <tr class="bg-light">
                                     <td colspan="2">
                                         <h5 class="font-size-14 m-0">Total:</h5>
                                     </td>
                                     <td>
-                                        $ 745.2
+                                        <%= (total) %>
                                     </td>
                                 </tr>
                             </tbody>
@@ -764,5 +762,9 @@ a {
         </div>
     </div>
     <!-- end row -->
-    
+    if qty of item = o, clear item
+    mailchimp for email
 </div>
+
+</body>
+</html>

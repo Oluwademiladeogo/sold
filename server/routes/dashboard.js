@@ -14,7 +14,7 @@ router.get("/", async(req, res)=>{
     })
 }
 catch (err){
-    console.log(err.message)
+    // console.log(err.message)
     let message = "You need to login to view this page"
     res.status(401).render("pages/error", {
         message: message,

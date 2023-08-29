@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken")
 router.get('/', (req, res) => {
   try{
     res.clearCookie('authToken');
-    console.log(req.cookies.authToken)
+    // console.log(req.cookies.authToken)
 
     
     req.flash('message', 'Logged out successfully'); 

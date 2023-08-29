@@ -4,7 +4,6 @@ const app = express()
 const mongoose = require("mongoose")
 const winston = require("winston")
 const session = require("express-session")
-const joi = require("joi")
 var path = require('path')
 const cookieParser = require("cookie-parser")
 
@@ -29,29 +28,30 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 
 //mongo connection
-const uri = "mongodb://localhost/SOLD"
+const uri = "process.env.MONGOOSE_SECRET"
 mongoose.connect(uri, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
     .then(()=>{
-      console.log("Connected to Mongodb");
+      // console.log("Connected to Mongodb");
     winston.info("Connected to Mongodb");
   })
 
 //port connection
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
-    console.log(`Connected, server listening on port ${port}`)
+    // console.log(`Connected, server listening on port ${port}`)
     winston.info(`Connected, server listening on port ${port}`)
 })
 
 app.use("/", require("./routes/index"))
 app.use("/aboutus", require("./routes/aboutus"))
+app.use("/pay", require("./routes/pay"))
 app.use("/cart", require("./routes/cart"))
 app.use("/dashboard", require("./routes/dashboard"))
 app.use("/login", require("./routes/login"))
