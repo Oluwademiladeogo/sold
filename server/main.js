@@ -23,6 +23,7 @@ app.use(flash());
 // express session 
 app.set('trust proxy', 1) // trust first proxy
 
+
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.use(session({
@@ -32,8 +33,8 @@ app.use(session({
 }));
 
 //mongo connection
-const uri = "process.env.MONGOOSE_SECRET"
-mongoose.connect(uri, {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/SOLD';
+mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
