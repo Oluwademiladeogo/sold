@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <title>LOGIN</title>
+</head>
+
+<style>
+    body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+  position: relative;
+}
+
+.top {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.middle {
+    border-radius: 0;
+}
+.bottom {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+    </style>
+
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form action="/login" class="form-signin" method="POST">
+    <img class="mb-4" src="images/logo.png" alt="" width="72" height="57">
+    <h1 class="h4 mb-3 fw-normal">Welcome Back!</h1> 
+    <div class="form-floating top">
+      <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating bottom">
+      <input type="password" name="password" class="form-control" placeholder="password" required>
+      <label for="floatingInput">password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
+    <p class="mt-5 mb-3 text-muted">Don't have an account?</p>
+    <div class="row">
+        <div class="column"><a href="/signup" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sign Up</a><br></div>
+        <div class="column"><a href="/" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Home</a></div>
+      </div>
+      <% if (message.length>0) {%>
+        <div class="alert alert-primary" role="alert"><%= message %></div>
+        <% if (!redirect) {%>
+          <script>
+            setTimeout(() => {
+            }, 2000);
+          </script>
+          <% } %>
+        <% if (redirect) {%>
+        <script>
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 2000);
+        </script>
+        <% } %>
+      <% } %>
+    <p class="mt-5 mb-3 text-muted">&copy; Bickersteth 2023</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>

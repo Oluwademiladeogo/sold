@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/header") %>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <% if(paywithcard) { %>
+    <title>Pay</title>
+</head>
+<body>
+    <style>
+    body{
+
+background-color: #eee;
+}
+
+.container{
+
+height: 100vh;
+
+}
+
+
+.card{
+border:none;
+}
+
+.form-control {
+border-bottom: 2px solid #eee !important;
+border: none;
+font-weight: 600
+}
+
+.form-control:focus {
+color: #495057;
+background-color: #fff;
+border-color: #8bbafe;
+outline: 0;
+box-shadow: none;
+border-radius: 0px;
+border-bottom: 2px solid #3b76e1 !important;
+}
+
+
+
+.inputbox {
+position: relative;
+margin-bottom: 20px;
+width: 100%
+}
+
+.inputbox span {
+position: absolute;
+top: 7px;
+left: 11px;
+transition: 0.5s
+}
+
+.inputbox i {
+position: absolute;
+top: 13px;
+right: 8px;
+transition: 0.5s;
+color: #3F51B5
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0
+}
+
+.inputbox input:focus~span {
+transform: translateX(-0px) translateY(-15px);
+font-size: 12px
+}
+
+.inputbox input:valid~span {
+transform: translateX(-0px) translateY(-15px);
+font-size: 12px
+}
+
+.card-blue{
+
+background-color: #492bc4;
+}
+
+.hightlight{
+
+background-color: #3b76e1;
+padding: 10px;
+border-radius: 10px;
+margin-top: 15px;
+font-size: 14px;
+}
+
+.yellow{
+
+color: #fdcc49; 
+}
+
+.decoration{
+
+text-decoration: none;
+font-size: 14px;
+}
+
+.btn-success {
+color: #fff;
+background-color: #3b76e1;
+border-color :#3b76e1;
+}
+
+.btn-success:hover {
+color: #fff;
+background-color:#492bc4;
+border-color: #492bc4;
+}
+
+
+.decoration:hover{
+
+text-decoration: none;
+color: #fdcc49; 
+}
+</style>
+<div class="container mt-5 px-5">
+
+    <div class="mb-4">
+
+        <h2>Confirm order and pay</h2>
+    <span>please make the payment, after that you can enjoy all the features and benefits.</span>
+        
+    </div>
+
+<div class="row">
+
+    <div class="col-md-8">
+        
+
+        <div class="card p-3">
+
+            <h6 class="text-uppercase">Payment details</h6>
+            <div class="inputbox mt-3"> <input type="text" name="name" class="form-control" required="required"> <span>Name on card</span> </div>
+
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <i class="fa fa-credit-card"></i> <span>Card Number</span> 
+
+
+                    </div>
+                    
+
+                </div>
+
+                <div class="col-md-6">
+
+                     <div class="d-flex flex-row">
+
+
+                         <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Expiry</span> </div>
+
+                      <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>CVV</span> </div>
+                         
+
+                     </div>
+                    
+
+                </div>
+                
+
+            </div>
+
+
+
+            <div class="mt-4 mb-4">
+
+                <h6 class="text-uppercase">Billing Address</h6>
+
+
+                <div class="row mt-3">
+
+                    <div class="col-md-6">
+
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Street Address</span> </div>
+                        
+
+                    </div>
+
+
+                     <div class="col-md-6">
+
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>City</span> </div>
+                        
+
+                    </div>
+
+
+                    
+
+                </div>
+
+
+                <div class="row mt-2">
+
+                    <div class="col-md-6">
+
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>State/Province</span> </div>
+                        
+
+                    </div>
+
+
+                     <div class="col-md-6">
+
+                        <div class="inputbox mt-3 mr-2"> <input type="text" name="name" class="form-control" required="required"> <span>Zip code</span> </div>
+                        
+
+                    </div>
+
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-4 mb-4 d-flex justify-content-between">
+
+
+                    <a style="text-decoration: none;
+                    color: #333;" href="/checkout">Previous step</a>
+
+
+                    <button class="btn btn-success px-3">Pay $<%= (total) %></button>
+
+
+                    
+
+                </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card card-blue p-3 text-white mb-3">
+
+           <span>You have to pay</span>
+            <div class="d-flex flex-row align-items-end mb-3">
+                <h1 class="mb-0 yellow">$<%= (total) %></h1> 
+            </div>
+
+            <!-- <span>Enjoy all the features and perk after you complete the payment</span> -->
+            <span>This feature is currently not working, please go back and proceed with cash</span>
+            <div class="hightlight">
+
+                <span>I hope you enjoyed your experience. We await your return and referral.</span>
+                
+
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+  
+
+</div>
+</body>
+</html>
+<% } if (!paywithcard) { %>
+    <meta name="theme-color" content="#712cf9">
+    <title>Success</title>
+  </head>
+  <body>
+    
+<main>
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Hurray!</h1>
+        <p class="col-md-8 fs-4" style="margin-top: 10px;">Thanks for shopping with SOLD, you'll be hearing from us soon.<br> Any Problems or suggestions?
+        <a href="mailto:bickerstethdemilade@gmail.com" style="text-decoration: none;">Contact us</a> </p>
+        <a href="/" style="text-decoration: none; margin-top: 20px;" class="btn btn-primary btn-lg" type="button">Keep Shopping</a>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; Bickersteth Oluwademilade 2023
+    </footer>
+  </div>
+</main>
+
+
+    
+  </body>
+</html>
+ <% } %>
