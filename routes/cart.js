@@ -3,6 +3,9 @@ const router = express.Router()
 const {cartschema} = require("../models/cart")
 router.get("/", async(req, res)=>{
     try{
+      if(!req.cookies.cartitem) {
+        res.cookie("cartitem", [])
+      }
     let card = req.cookies.cartitem
     // console.log(req.cookies, req.cookies.cartitem)
     const items = []
