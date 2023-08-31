@@ -42,16 +42,24 @@
 It consistently brings you the best sound quality by seamlessly tuning audio on oraimo Sound APP. oraimo also gives audiophiles and music enthusiasts the tools to tailor their exclusive style for their every whim.
     </p>
         <h3>Price: $50</h3>
-        <div class="row">
-          <div class="col">
-            <a href="/checkout" class="btn btn-primary btn-lg">Buy Now</a>
-          </div>
-          <div class="col">
-            <a href="#" class="btn btn-primary btn-lg">Add to Cart</a>
+        <form method="post" action="/cart">
+          <div class="row">
+            <div class="col">
+              <a href="/" role="button" class=" btn btn-primary btn-lg"><h4>Continue</h4></a>
+            </div>
+            <div class="col">
+            <input type="hidden" name="card" value="card2">
+            <input type="hidden" name="dir" value="/card2">
+            <input type="submit" class="btn btn-primary btn-lg"
+                                tabindex="0" role="button"
+                                data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="SOLD" 
+                                data-bs-content="Successfully added to cart"  value="Add to Cart">
           </div>
         </div>
+         </form>
+        </div>
 </div>
-<a href="/" class="continue"><h4>Continue Shopping</h4></a>
 </div>
+<%- include("../../partials/cardpartials") %>
 </body>
 </html>

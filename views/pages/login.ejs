@@ -63,8 +63,11 @@ body {
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating bottom">
-      <input type="password" name="password" class="form-control" placeholder="password" required>
-      <label for="floatingInput">password</label>
+      <input type="password" name="password"  class="form-control" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Min 8, number, upper and lowercase letters" required>
+          <label for="floatingInput">password</label>
+
+  </div>
+  
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
     <p class="mt-5 mb-3 text-muted">Don't have an account?</p>

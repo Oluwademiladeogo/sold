@@ -24,7 +24,7 @@ res.render("pages/cart", {
 })}
 catch (error) {
     console.error(error);
-    let message = "Something happened, please log in to see cart"
+    let message = "Something happened, please log in to view cart"
     res.status(500).render("pages/error", {
         message: message,
         cookies: req.cookies,
@@ -56,7 +56,7 @@ router.post("/", async(req, res) => {
           // Set the updated cartitem cookie
           res.cookie("cartitem", existingCartItems);
         //   console.log("done", req.cookies.cartitem);
-          res.redirect("/")
+          res.redirect(req.body.dir)
         }
         else {
     let message = "Item not found"

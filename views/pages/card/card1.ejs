@@ -33,20 +33,29 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  
     <div class="content2 col-6">
       <h2>CLIPPER</h2>
       <p style="font-family: sans-serif;">Kiki Rechargeable and Cordless Hair Clipper.<br> It is suitable for all ages and all hair types. <br> It is rechargeable so it can be used at anytime and anywhere no matter the situation.</p>
         <h3>Price: $20</h3>
-        <div class="row">
-          <div class="col">
-            <a href="/checkout" class="btn btn-primary btn-lg">Buy Now</a>
-          </div>
-          <div class="col">
-            <a href="#" class="btn btn-primary btn-lg">Add to Cart</a>
+          <form method="post" action="/cart">
+          <div class="row">
+            <div class="col">
+              <a href="/" role="button" class=" btn btn-primary btn-lg"><h4>Continue</h4></a>
+            </div>
+            <div class="col">
+            <input type="hidden" name="card" value="card1">
+            <input type="hidden" name="dir" value="/card1">
+            <input type="submit" class="btn btn-primary btn-lg"
+                                tabindex="0" role="button"
+                                data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="SOLD" 
+                                data-bs-content="Successfully added to cart"  value="Add to Cart">
           </div>
         </div>
+        </form>
+        </div>
 </div>
-<a href="/" class="continue"><h4>Continue Shopping</h4></a>
 </div>
+<%- include("../../partials/cardpartials") %>
 </body>
 </html>

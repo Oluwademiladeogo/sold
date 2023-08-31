@@ -5,7 +5,7 @@ router.get("/", async(req, res)=>{
 
 })
 router.post("/", (req, res)=>{
-    console.log(req.body.paymethod)
+    // console.log(req.body.paymethod)
     if(req.body.paymethod === "paywithcard"){
         res.render("pages/pay", {
             cookies: req.cookies,

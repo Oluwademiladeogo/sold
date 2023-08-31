@@ -58,7 +58,7 @@ body {
     <img class="mb-4" src="images/logo.png" alt="" width="72" height="57">
     <h1 class="h4 mb-3 fw-normal">Signup!</h1>
     <div class="form-floating top">
-      <input type="text" name="name" class="form-control" placeholder="name" required autofocus>
+      <input type="text" name="name" class="form-control" pattern="^[A-Za-z\s]+$" title="Must be a string" placeholder="name" required autofocus>
       <label for="floatingInput">Name</label>
     </div>
     <div class="form-floating middle">
@@ -66,11 +66,11 @@ body {
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating bottom">
-      <input type="number" name="phone" class="form-control" placeholder="Phone Number" required>
+      <input type="number" name="phone" class="form-control" pattern="[0-9]{11}" title="Enter a valid number" placeholder="Phone Number" required>
       <label for="floatingInput">Phone Number</label>
     </div>  
     <div class="form-floating bottom">
-        <input type="password" name="password" class="form-control" placeholder="password" required>
+        <input type="password" name="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Min 8, number, upper and lowercase letters" placeholder="password" required>
         <label for="floatingInput">password</label>
       </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>

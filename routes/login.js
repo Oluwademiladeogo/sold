@@ -11,6 +11,7 @@ router.get("/", (req, res)=>{
 router.post("/", async(req, res)=>{
         try{
 let user = await loginschema.findOne({email: req.body.email})
+// console.log(req.body.password)
      if(!user){
             req.flash("message", "Invalid email or password")
         res.render("pages/login", {message: req.flash("message"), redirect: false}) 
@@ -22,7 +23,7 @@ let user = await loginschema.findOne({email: req.body.email})
         // console.log(passwordentered, passkey)
           bcrypt.compare(passwordentered, passkey, (err, result)=>{
              if(result){
-                let expires = Math.floor(Date.now()/1000) + 60 * 60 * 24 * 5 //5 days
+                let expires = Math.floor(Date.now()/1000) + 60 * 60 * 24 //1 days
                 let payload = {
                 _id: user._id,
                 name: user.name,
