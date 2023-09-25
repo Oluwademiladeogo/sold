@@ -1,61 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("../../partials/header") %>
-    <link rel="stylesheet" type="text/css" href="styles/itemstyles.css">
+    <link rel="stylesheet" type="text/css" href="styles/itemstyles.css" />
   </head>
-<body>
-
-<div class="row">
-<div id="carousel1" class="carousel carousel-dark slide col-4">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="images/headphones2.jpg" class="d-block w-100 img-fluid" alt="...">
+  <body>
+    <div class="row">
+      <div id="carousel1" class="carousel carousel-dark slide col-4">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carousel1"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carousel1"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carousel1"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img
+              src="images/headphones2.jpg"
+              class="d-block w-100 img-fluid"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="images/headphones3.jpg"
+              class="d-block w-100 img-fluid"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/headphones4.jpg"
+              class="d-block w-100 img-fluid"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carousel1"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carousel1"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="images/headphones3.jpg" class="d-block w-100 img-fluid" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/headphones4.jpg" class="d-block w-100 img-fluid" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>   
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-    <div class="content2 col-6">
-      <h2>Gaming Headphones</h2>
-      <p style="font-family: sans-serif;">BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller, Noise Cancelling Over Ear 
-        Headphones with Mic, LED Light, Bass Surround, Soft Memory Earmuffs for Laptop Mac Nintendo NES Games</p>
+      <div class="content2 col-6">
+        <h2>Gaming Headphones</h2>
+        <p style="font-family: sans-serif">
+          BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller,
+          Noise Cancelling Over Ear Headphones with Mic, LED Light, Bass
+          Surround, Soft Memory Earmuffs for Laptop Mac Nintendo NES Games
+        </p>
         <h3>Price: $21.29</h3>
         <form method="post" action="/cart">
           <div class="row">
             <div class="col">
-              <a href="/" role="button" class=" btn btn-primary btn-lg"><h4>Continue</h4></a>
+              <a href="/" role="button" class="btn btn-primary btn-lg"
+                ><h4>Continue</h4></a
+              >
             </div>
             <div class="col">
-            <input type="hidden" name="card" value="card4">
-            <input type="hidden" name="dir" value="/card4">
-            <input type="submit" class="btn btn-primary btn-lg"
-                                tabindex="0" role="button"
-                                data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="SOLD" 
-                                data-bs-content="Successfully added to cart"  value="Add to Cart">
+              <input type="hidden" name="card" value="card4" />
+              <input type="hidden" name="dir" value="/card4" />
+              <input
+                type="submit"
+                class="btn btn-primary btn-lg"
+                tabindex="0"
+                role="button"
+                data-bs-toggle="popover"
+                data-bs-trigger="focus"
+                data-bs-title="SOLD"
+                data-bs-content="Successfully added to cart"
+                value="Add to Cart"
+              />
+            </div>
           </div>
-        </div>
-         </form>
-        </div>
-</div>
-</div>
-<%- include("../../partials/cardpartials") %>
-</body>
+        </form>
+      </div>
+    </div>
+    <%- include("../../partials/cardpartials") %>
+  </body>
 </html>
